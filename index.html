@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+    <title>site</title>
+</head>
+
+<body>
+    <div class="screen flex column align-center">
+        <div class="modal flex column align-center">
+            <h1>Join us to get access to the latest stories!</h1>
+            <input type="email" name="user-email" id="user-email" placeholder="yourmail@mail.com">
+            <div class="buttons">
+                <button onclick="closeModal()">submit</button>
+                <button onclick="closeModal()">close</button>
+            </div>
+        </div>
+    </div>
+    <header class="container flex flex-start align-center ">
+        <h1 class="logo">
+            <span class="nav-firstchar">B</span>logins
+            <span class="logo-dot">.</span>
+        </h1>
+        <div class="hamburger" onclick="toggleMenu(event)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+        <nav>
+            <ul id="main-menu" class="main-menu clean-list flex">
+                <li onclick="toggleSelected(this,'journal',event)" class="center-item">
+                    <ul class="journal-dropdown drop-down clean-list">
+                        <li onclick="toggleMenu(event)" class="center-item"> October 2016</li>
+                        <li onclick="toggleMenu(event)" class="center-item"> January 2017</li>
+                        <li onclick="toggleMenu(event)" class="center-item"> April 2017</li>
+                        <li onclick="toggleMenu(event)" class="center-item"> July 2017 </li>
+                    </ul>
+                    <a href="#">Journal</a>
+                </li>
+                <li onclick="toggleSelected(this,'',event)" class="center-item">
+                    <a href="#">About</a>
+                </li>
+                <li onclick="toggleSelected(this,'',event)" class="center-item">
+                    <a href="#">Work</a>
+                </li>
+                <li onclick="toggleSelected(this,'',event)" class="center-item">
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <main class="container flex column align-center">
+        <ul class="blogs-container flex column align-center clean-list">
+            <li class="blog-item flex ">
+                <img onclick="addModal()" class="blog-image" src="img/img-01.png" alt="Duis aute irure dolor in henderit in voluptate.">
+                <div class="blog-info flex column space-between">
+                    <h2>Duis aute irure dolor in henderit in voluptate.</h2>
+                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commo doconsequat,
+                        sunt in culpa qui officia deserunt mollit anim id est laborum. Duis aute irure dolor in reprehenderit
+                        in voluptate velit esse cillum dolore eu fugiat nulla pariatur...
+                    </p>
+                    <button onclick="addModal()">Continue Reading </button>
+                </div>
+            </li>
+            <li class="blog-item flex ">
+                <img onclick="addModal()" class="blog-image" src="img/img-02.png" alt="Duis aute irure dolor in henderit in voluptate.">
+                <div class="blog-info flex column space-between">
+                    <h2>Duis aute irure dolor in henderit in voluptate.</h2>
+                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commo doconsequat,
+                        sunt in culpa qui officia deserunt mollit anim id est laborum. Duis aute irure dolor in reprehenderit
+                        in voluptate velit esse cillum dolore eu fugiat nulla pariatur...
+                    </p>
+                    <button onclick="addModal()">Continue Reading </button>
+                </div>
+            </li>
+            <li class="blog-item flex ">
+                <img onclick="addModal()" class="blog-image" src="img/img-03.png" alt="Duis aute irure dolor in henderit in voluptate.">
+                <div class="blog-info flex column space-between">
+                    <h2>Duis aute irure dolor in henderit in voluptate.</h2>
+                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commo doconsequat,
+                        sunt in culpa qui officia deserunt mollit anim id est laborum. Duis aute irure dolor in reprehenderit
+                        in voluptate velit esse cillum dolore eu fugiat nulla pariatur...
+                    </p>
+                    <button onclick="addModal('')">Continue Reading </button>
+                </div>
+            </li>
+
+            <div class="seperator"></div>
+            <div class="move-page flex space-between">
+                <a class="previous flex" href="#">
+                    <img src="img/svg/arrow-left.svg" alt="arrow left">
+                    <span>previous</span>
+                </a>
+                <a class="next flex " href="#">next
+                    <img src="img/svg/arrow-right.svg" alt="arrow left">
+                </a>
+            </div>
+
+        </ul>
+    </main>
+
+    <footer class="container flex column">
+
+        <h1 class="logo">
+            <span class="nav-firstchar">B</span>logins
+            <span class="logo-dot">.</span>
+        </h1>
+
+        <p class="disclaimer">
+            <span class="disclaimer-start">© 2014 B</span>login.com - All Rights Reserved - Find more free Templates at
+            <span class="disclaimer-end">Pixelhint.com</span>
+        </p>
+
+        <ul class="social-links clean-list flex">
+            <li class="link facebook center-item">
+                <img src="img/svg/f.svg" alt="link facebook">
+            </li>
+            <li class="link twitter center-item">
+                <img src="img/svg/l.svg" alt="link twitter">
+            </li>
+            <li class="link be center-item">
+                <img src="img/svg/e.svg" alt="link be">
+            </li>
+            <li class="link basketball center-item">
+                <img src="img/svg/d.svg" alt="link basketball">
+            </li>
+
+        </ul>
+
+    </footer>
+
+
+    <script>
+        function toggleMenu(ev) {
+            ev.stopPropagation()
+            document.querySelector('.hamburger').classList.toggle("change");
+            document.querySelector('.main-menu').classList.toggle('open')
+            document.querySelector('.journal-dropdown').classList.remove('open')
+            
+        }
+
+        function exitMenu() {
+            document.querySelector('.main-menu').classList.remove('open')
+            document.querySelector('.hamburger').classList.remove("change");
+        }
+
+        function toggleSelected(el,navName,ev) {
+            ev.stopPropagation()
+            el.classList.toggle('selected')
+            if(navName==='journal'){
+                document.querySelector('.journal-dropdown').classList.toggle('open')
+            }
+        }
+
+        function addModal() {
+            document.querySelector('.screen').classList.add('show')
+            document.querySelector('.modal').classList.add('show')
+        }
+
+        function closeModal(keyword) {
+            document.querySelector('.modal').classList.add('close');
+            setTimeout(function () {
+                document.querySelector('.modal').classList.remove('close');
+                document.querySelector('.screen').classList.remove('show')
+                document.querySelector('.modal').classList.remove('show')
+            }, 300)
+
+        }
+    </script>
+
+</body>
+
+</html>
